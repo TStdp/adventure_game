@@ -1,0 +1,1027 @@
+
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <base href="https://app.bsd.education">
+          <title>& The Sun Stone Sword - Enhanced Interactive Quest</title>
+          
+          
+          <link rel="stylesheet" type="text/css" href="style.css" /><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" /><style>
+    body {
+      background-color: #020617;
+      color: #E2E8F0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      user-select: none;
+    }
+    
+    .glow-sun-lg {
+      filter: drop-shadow(0px 0px 18px rgba(245, 158, 11, 0.95)) drop-shadow(0px 0px 35px rgba(251, 191, 36, 0.6));
+    }
+    .glow-moon-lg {
+      filter: drop-shadow(0px 0px 18px rgba(56, 189, 248, 0.95)) drop-shadow(0px 0px 35px rgba(125, 211, 252, 0.6));
+    }
+    .glow-void-lg {
+      filter: drop-shadow(0px 0px 20px rgba(168, 85, 247, 0.8)) drop-shadow(0px 0px 40px rgba(107, 33, 168, 0.5));
+    }
+
+    @keyframes pulseAura {
+      0%, 100% { opacity: 0.75; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.2; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-40px) translateX(20px) rotate(180deg); opacity: 0; }
+    }
+
+    @keyframes raysSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .animate-rays {
+      transform-origin: center;
+      animation: raysSpin 25s linear infinite;
+    }
+
+    .pulse-aura {
+      animation: pulseAura 3.5s infinite ease-in-out;
+    }
+
+    .particle-float {
+      animation: floatParticle 5s infinite linear;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+          
+          <script src="https://cdn.tailwindcss.com"></script><script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            sunGold: '#FBBF24',
+            sunAmber: '#F59E0B',
+            moonBlue: '#38BDF8',
+            darkPurple: '#0F172A',
+            voidBlack: '#030712',
+            shadowViolet: '#6B21A8'
+          }
+        }
+      }
+    }
+  </script>
+          
+        </head>
+        <body class="min-h-screen flex flex-col items-center justify-center p-2 md:p-6 overflow-x-hidden">
+          
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin & The Sun Stone Sword - Enhanced Interactive Quest</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #020617;
+      color: #E2E8F0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      user-select: none;
+    }
+    
+    .glow-sun-lg {
+      filter: drop-shadow(0px 0px 18px rgba(245, 158, 11, 0.95)) drop-shadow(0px 0px 35px rgba(251, 191, 36, 0.6));
+    }
+    .glow-moon-lg {
+      filter: drop-shadow(0px 0px 18px rgba(56, 189, 248, 0.95)) drop-shadow(0px 0px 35px rgba(125, 211, 252, 0.6));
+    }
+    .glow-void-lg {
+      filter: drop-shadow(0px 0px 20px rgba(168, 85, 247, 0.8)) drop-shadow(0px 0px 40px rgba(107, 33, 168, 0.5));
+    }
+
+    @keyframes pulseAura {
+      0%, 100% { opacity: 0.75; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.2; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-40px) translateX(20px) rotate(180deg); opacity: 0; }
+    }
+
+    @keyframes raysSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .animate-rays {
+      transform-origin: center;
+      animation: raysSpin 25s linear infinite;
+    }
+
+    .pulse-aura {
+      animation: pulseAura 3.5s infinite ease-in-out;
+    }
+
+    .particle-float {
+      animation: floatParticle 5s infinite linear;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-2 md:p-6 overflow-x-hidden">
+
+  <!-- Main Game Container -->
+  <div class="w-full max-w-5xl bg-slate-900/90 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col backdrop-blur-md">
+    
+    <!-- Top Header -->
+    <header class="bg-slate-950/90 px-6 py-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 border border-amber-300 flex items-center justify-center glow-sun-lg">
+          <svg class="w-6 h-6 text-slate-950" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2a1 1 0 011 1v1.07A8.001 8.001 0 0119.93 11H21a1 1 0 110 2h-1.07A8.001 8.001 0 0113 19.93V21a1 1 0 11-2 0v-1.07A8.001 8.001 0 014.07 13H3a1 1 0 110-2h1.07A8.001 8.001 0 0111 4.07V3a1 1 0 011-1zm0 5a5 5 0 100 10 5 5 0 000-10z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-serif text-lg md:text-xl font-bold tracking-wider text-amber-400">KEVIN & THE SUN STONE SWORD</h1>
+          <p class="text-xs text-slate-400">An Enhanced Quest of Light, Fear & Shadows</p>
+        </div>
+      </div>
+
+      <!-- Stats & Audio Controls -->
+      <div class="flex items-center gap-6">
+        <!-- Fear Indicator -->
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Fear Level:</span>
+          <div class="w-32 bg-slate-950 rounded-full h-3 border border-slate-800 overflow-hidden p-0.5">
+            <div id="fear-bar" class="bg-gradient-to-r from-emerald-500 via-amber-500 to-red-600 h-full rounded-full transition-all duration-500" style="width: 30%;"></div>
+          </div>
+        </div>
+
+        <button id="sound-btn" onclick="toggleAudio()" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-2 border border-slate-700 transition">
+          <svg id="sound-icon" class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span id="sound-label">Audio: ON</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[560px]">
+      
+      <!-- Interactive Detailed SVG Viewport (Left/Top) -->
+      <div class="lg:col-span-7 bg-slate-950 flex flex-col justify-center items-center p-3 md:p-5 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800 min-h-[360px] md:min-h-[460px]">
+        
+        <!-- Ambient Particles -->
+        <div class="absolute inset-0 pointer-events-none opacity-40">
+          <div class="absolute top-8 left-12 w-2 h-2 bg-amber-400 rounded-full particle-float"></div>
+          <div class="absolute bottom-16 right-16 w-3 h-3 bg-cyan-400 rounded-full particle-float" style="animation-delay: 1.8s;"></div>
+          <div class="absolute top-1/2 left-1/4 w-2 h-2 bg-purple-400 rounded-full particle-float" style="animation-delay: 3.2s;"></div>
+        </div>
+
+        <!-- Dynamic Detailed SVG Container -->
+        <div id="svg-viewport" class="w-full h-full flex items-center justify-center relative">
+          <!-- Rich SVG vector scene injected here -->
+        </div>
+
+        <!-- Location Badge -->
+        <div id="location-badge" class="absolute bottom-4 left-4 bg-slate-950/80 border border-slate-700/80 rounded-lg px-3 py-1.5 text-xs font-serif text-slate-300 flex items-center gap-2 backdrop-blur-md shadow-lg">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+          <span id="location-text" class="tracking-wide">Oakhaven Village</span>
+        </div>
+      </div>
+
+      <!-- Narrative & Choice Panel (Right/Bottom) -->
+      <div class="lg:col-span-5 flex flex-col justify-between p-6 bg-slate-900/80">
+        
+        <div class="flex-1 flex flex-col justify-start">
+          <div class="flex items-center justify-between mb-2">
+            <span id="chapter-title" class="font-serif text-xs uppercase tracking-widest text-amber-400 font-bold">Chapter 1: The Curse of Eternal Night</span>
+          </div>
+
+          <!-- Narrative Box -->
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 my-2 text-slate-200 text-sm md:text-base leading-relaxed shadow-inner min-h-[160px] flex flex-col justify-center border-l-4 border-l-amber-500">
+            <p id="story-text" class="transition-opacity duration-300">Loading adventure...</p>
+          </div>
+
+          <!-- Interactive Puzzle Panel Container -->
+          <div id="puzzle-container" class="hidden my-3 p-4 bg-slate-950 border border-amber-500/40 rounded-xl shadow-xl">
+            <!-- Dynamic Puzzle UI injected here -->
+          </div>
+        </div>
+
+        <!-- Choices Area -->
+        <div class="mt-4 pt-4 border-t border-slate-800">
+          <div id="choices-container" class="flex flex-col gap-2.5">
+            <!-- Choice buttons injected here -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer / Inventory Bar -->
+    <footer class="bg-slate-950 px-6 py-3 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs gap-4">
+      <div class="flex items-center gap-2 text-slate-400 font-semibold uppercase tracking-wider">
+        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+        Inventory & Relics:
+      </div>
+      
+      <div id="inventory-list" class="flex items-center gap-3">
+        <!-- Sun Stone Sword -->
+        <div class="inventory-item flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-950/50 border border-amber-500/50 text-amber-300 font-medium glow-sun-lg">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <span>Sun Stone Sword</span>
+        </div>
+
+        <!-- Decoded Scroll -->
+        <div id="inv-scroll" class="inventory-item opacity-40 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-500 font-medium transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <span>Sun Runes Scroll</span>
+        </div>
+
+        <!-- Silver Key -->
+        <div id="inv-key" class="inventory-item opacity-40 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-500 font-medium transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 0121 9z"></path></svg>
+          <span>Silver Key</span>
+        </div>
+
+        <!-- Moon Crystal -->
+        <div id="inv-crystal" class="inventory-item opacity-40 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-500 font-medium transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12L12 3 4 12l8 9 8-9z"></path></svg>
+          <span>Moon Crystal</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  
+</body>
+</html>
+    
+    
+
+          
+          <script>
+    /* =====================================================================
+       AUDIO SYNTHESIZER (Web Audio API)
+       ===================================================================== */
+    let audioCtx = null;
+    let audioEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+    }
+
+    function playSound(type) {
+      if (!audioEnabled) return;
+      initAudio();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(520, now);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.linearRampToValueAtTime(0.01, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else if (type === 'success') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, now); // C5
+        osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+        osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+        osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.linearRampToValueAtTime(0.01, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'fail') {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(240, now);
+        osc.frequency.linearRampToValueAtTime(110, now + 0.35);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.linearRampToValueAtTime(0.01, now + 0.35);
+        osc.start(now);
+        osc.stop(now + 0.35);
+      } else if (type === 'swordHum') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(180, now);
+        osc.frequency.exponentialRampToValueAtTime(440, now + 0.4);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.linearRampToValueAtTime(0.01, now + 0.4);
+        osc.start(now);
+        osc.stop(now + 0.4);
+      } else if (type === 'magic') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(350, now);
+        osc.frequency.exponentialRampToValueAtTime(1400, now + 0.6);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.linearRampToValueAtTime(0.01, now + 0.6);
+        osc.start(now);
+        osc.stop(now + 0.6);
+      }
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      document.getElementById('sound-label').innerText = audioEnabled ? 'Audio: ON' : 'Audio: OFF';
+      if (audioEnabled) playSound('click');
+    }
+
+    /* =====================================================================
+       ENHANCED DETAILED SVG FACTORY (Rich Vector Illustrations)
+       ===================================================================== */
+    const SVGDefs = `
+      <defs>
+        <!-- Filters -->
+        <filter id="glowGold" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        
+        <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="8" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <filter id="shadowAura" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="12" result="blur" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.7"/>
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <radialGradient id="sunGlowRadial" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFFBEB" stop-opacity="1"/>
+          <stop offset="35%" stop-color="#FBBF24" stop-opacity="0.9"/>
+          <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+        </radialGradient>
+
+        <radialGradient id="moonGlowRadial" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#F0F9FF" stop-opacity="1"/>
+          <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.8"/>
+          <stop offset="75%" stop-color="#0284C7" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+        </radialGradient>
+
+        <radialGradient id="voidAura" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#C084FC" stop-opacity="0.8"/>
+          <stop offset="50%" stop-color="#6B21A8" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+        </radialGradient>
+
+        <linearGradient id="skyCursed" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#05030A"/>
+          <stop offset="50%" stop-color="#1E1B4B"/>
+          <stop offset="100%" stop-color="#020617"/>
+        </linearGradient>
+
+        <linearGradient id="bladeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="50%" stop-color="#FBBF24"/>
+          <stop offset="100%" stop-color="#D97706"/>
+        </linearGradient>
+
+        <linearGradient id="bladeMoon" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="50%" stop-color="#38BDF8"/>
+          <stop offset="100%" stop-color="#0369A1"/>
+        </linearGradient>
+
+        <!-- Reusable Detailed Character: Kevin (Afraid) -->
+        <g id="kevinScared">
+          <!-- Cloak & Body -->
+          <path d="M-25 35 Q-35 80 -28 110 L28 110 Q35 80 25 35 Z" fill="#9A3412" />
+          <path d="M-18 35 L18 35 L22 85 L-22 85 Z" fill="#94A3B8" stroke="#475569" stroke-width="2" />
+          <!-- Pauldrons -->
+          <ellipse cx="-20" cy="38" rx="10" ry="6" fill="#CBD5E1" />
+          <ellipse cx="20" cy="38" rx="10" ry="6" fill="#CBD5E1" />
+          <!-- Helmet & Face -->
+          <rect x="-16" y="5" width="32" height="30" rx="8" fill="#CBD5E1" stroke="#475569" stroke-width="2"/>
+          <path d="M-12 18 L12 18" stroke="#1E293B" stroke-width="4" stroke-linecap="round"/>
+          <!-- Scared Wide Eyes in Visor -->
+          <circle cx="-5" cy="18" r="3.5" fill="#FFFFFF"/>
+          <circle cx="5" cy="18" r="3.5" fill="#FFFFFF"/>
+          <circle cx="-5" cy="18" r="1.5" fill="#020617"/>
+          <circle cx="5" cy="18" r="1.5" fill="#020617"/>
+          <!-- Sweat Drop -->
+          <path d="M14 8 Q17 12 14 15 Q11 12 14 8 Z" fill="#38BDF8"/>
+          <!-- Trembling Sun Stone Sword -->
+          <g filter="url(#glowGold)" transform="translate(18, 25) rotate(-20)">
+            <path d="M0 0 L40 -35 L46 -29 L6 6 Z" fill="url(#bladeGold)" />
+            <circle cx="0" cy="0" r="5" fill="#F59E0B" />
+          </g>
+        </g>
+
+        <!-- Reusable Detailed Character: Lord Nocturnus -->
+        <g id="darkLordNocturnus">
+          <!-- Swirling Violet Aura -->
+          <circle cx="0" cy="0" r="110" fill="url(#voidAura)" class="pulse-aura" />
+          <!-- Spiked Crown & Horns -->
+          <path d="M-40 -40 L-20 -90 L0 -50 L20 -90 L40 -40 L0 -20 Z" fill="#311042" stroke="#A855F7" stroke-width="2" />
+          <!-- Main Dark Robe / Armor -->
+          <path d="M-50 -20 Q0 -30 50 -20 L70 140 L-70 140 Z" fill="#0F172A" stroke="#581C87" stroke-width="3" />
+          <path d="M-30 0 L0 30 L30 0 L0 100 Z" fill="#2E1065" />
+          <!-- Impose Shoulder Spikes -->
+          <polygon points="-50,-10 -80,-40 -40,-20" fill="#581C87" />
+          <polygon points="50,-10 80,-40 40,-20" fill="#581C87" />
+          <!-- Glowing Void Eyes -->
+          <ellipse cx="-15" cy="-25" rx="6" ry="3" fill="#E9D5FF" filter="url(#glowCyan)" />
+          <ellipse cx="15" cy="-25" rx="6" ry="3" fill="#E9D5FF" filter="url(#glowCyan)" />
+        </g>
+      </defs>
+    `;
+
+    const SVGFactory = {
+      // Scene 1: Village under Eternal Night
+      village: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="url(#skyCursed)"/>
+
+          <!-- Swirling Cursed Clouds -->
+          <path d="M0 80 Q150 20 350 90 T700 50 L700 0 L0 0 Z" fill="#2E1065" opacity="0.6" class="pulse-aura"/>
+          
+          <!-- Background Mountain Silhouettes -->
+          <path d="M0 320 L140 180 L260 270 L420 150 L580 290 L700 200 L700 450 L0 450 Z" fill="#0F172A"/>
+          <path d="M0 350 L180 240 L340 320 L500 210 L700 340 L700 450 L0 450 Z" fill="#090D16"/>
+
+          <!-- Detailed Village Cobblestone Cottages -->
+          <polygon points="120,360 190,300 260,360" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+          <rect x="135" y="360" width="110" height="70" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+          <!-- Glowing purple cursed window -->
+          <rect x="155" y="380" width="25" height="25" rx="4" fill="#6B21A8" filter="url(#glowCyan)"/>
+          <rect x="195" y="380" width="25" height="25" rx="4" fill="#6B21A8" filter="url(#glowCyan)"/>
+
+          <polygon points="420,370 480,310 540,370" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+          <rect x="435" y="370" width="90" height="60" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+
+          <!-- Cobblestone Path -->
+          <path d="M280 450 L380 450 L350 360 L310 360 Z" fill="#1E293B"/>
+
+          <!-- Sun Stone Sword Light Beam radiating in Foreground -->
+          <circle cx="230" cy="320" r="180" fill="url(#sunGlowRadial)"/>
+          
+          <!-- Lens Flare Rays -->
+          <g class="animate-rays" transform="translate(230,320)" opacity="0.4">
+            <line x1="-200" y1="0" x2="200" y2="0" stroke="#FBBF24" stroke-width="2"/>
+            <line x1="0" y1="-200" x2="0" y2="200" stroke="#FBBF24" stroke-width="2"/>
+            <line x1="-140" y1="-140" x2="140" y2="140" stroke="#F59E0B" stroke-width="1.5"/>
+            <line x1="-140" y1="140" x2="140" y2="-140" stroke="#F59E0B" stroke-width="1.5"/>
+          </g>
+
+          <!-- Kevin in Foreground -->
+          <use href="#kevinScared" x="220" y="270" />
+        </svg>
+      `,
+
+      // Scene 2: Whispering Dark Forest
+      forest: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="#030712"/>
+
+          <!-- Dark Forest Canopy Light Shaft -->
+          <polygon points="200,0 350,0 500,450 150,450" fill="url(#sunGlowRadial)" opacity="0.25" />
+
+          <!-- Twisted Ancient Trees -->
+          <path d="M-20 450 Q80 250 20 0 L100 0 Q140 280 80 450 Z" fill="#0F172A"/>
+          <path d="M620 450 Q540 220 680 0 L720 0 Q620 280 700 450 Z" fill="#0F172A"/>
+          <path d="M450 450 L490 180 L540 450 Z" fill="#1E1B4B"/>
+
+          <!-- Bioluminescent Mushrooms on Ground -->
+          <ellipse cx="140" cy="410" rx="12" ry="6" fill="#38BDF8" filter="url(#glowCyan)"/>
+          <rect x="138" y="410" width="4" height="15" fill="#E0F2FE"/>
+          <ellipse cx="165" cy="425" rx="8" ry="4" fill="#38BDF8" filter="url(#glowCyan)"/>
+
+          <!-- Glowing Spooky Eyes in Deep Forest -->
+          <ellipse cx="510" cy="240" rx="5" ry="2.5" fill="#A855F7" filter="url(#glowCyan)"/>
+          <ellipse cx="525" cy="240" rx="5" ry="2.5" fill="#A855F7" filter="url(#glowCyan)"/>
+          <ellipse cx="80" cy="200" rx="4" ry="2" fill="#EF4444" filter="url(#glowGold)"/>
+          <ellipse cx="92" cy="200" rx="4" ry="2" fill="#EF4444" filter="url(#glowGold)"/>
+
+          <!-- Kevin cautiously stepping -->
+          <use href="#kevinScared" x="280" y="260" />
+        </svg>
+      `,
+
+      // Scene 3: Shadow Gate
+      shadowGate: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="#020617"/>
+
+          <!-- Giant Stone Gate Arch -->
+          <path d="M120 450 L120 180 Q350 20 580 180 L580 450 Z" fill="#0F172A" stroke="#334155" stroke-width="12"/>
+          <path d="M160 450 L160 200 Q350 60 540 200 L540 450 Z" fill="#030712"/>
+
+          <!-- Intricate Sun-Dial Lock Disk -->
+          <g transform="translate(350, 220)" filter="url(#glowGold)">
+            <circle cx="0" cy="0" r="75" fill="#1E293B" stroke="#F59E0B" stroke-width="5"/>
+            <circle cx="0" cy="0" r="50" fill="#090D16" stroke="#FBBF24" stroke-width="2" stroke-dasharray="6,4"/>
+            <!-- Sun Rays on Dial -->
+            <path d="M0 -75 L0 -50 M0 75 L0 50 M-75 0 L-50 0 M75 0 L50 0 M-53 -53 L-35 -35 M53 53 L35 35 M-53 53 L-35 35 M53 -53 L35 -35" stroke="#FBBF24" stroke-width="4"/>
+            <!-- Center Glowing Sun Orb -->
+            <circle cx="0" cy="0" r="22" fill="url(#bladeGold)"/>
+          </g>
+
+          <text x="350" y="365" text-anchor="middle" fill="#FEF08A" font-family="Cinzel" font-size="16" font-weight="bold" letter-spacing="3">DECIPHER THE SUN-TO-MOON RUNES</text>
+        </svg>
+      `,
+
+      // Scene 4: Moon Temple Cavern
+      moonTemple: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="#030712"/>
+
+          <!-- Cavern Stalactites -->
+          <polygon points="50,0 80,120 110,0" fill="#0F172A"/>
+          <polygon points="220,0 250,180 290,0" fill="#1E293B"/>
+          <polygon points="520,0 560,150 600,0" fill="#0F172A"/>
+
+          <!-- Radial Moon Glow -->
+          <circle cx="350" cy="200" r="190" fill="url(#moonGlowRadial)"/>
+
+          <!-- Reflecting Water Pool at Base -->
+          <ellipse cx="350" cy="400" rx="280" ry="40" fill="#0284C7" opacity="0.3" filter="url(#glowCyan)"/>
+
+          <!-- Altar Pillar -->
+          <polygon points="280,420 420,420 390,280 310,280" fill="#1E293B" stroke="#38BDF8" stroke-width="3"/>
+
+          <!-- Floating Glowing Moon Crystal -->
+          <g transform="translate(350, 190)" filter="url(#glowCyan)" class="pulse-aura">
+            <polygon points="0,-45 28,0 0,45 -28,0" fill="url(#bladeMoon)"/>
+            <polygon points="0,-45 28,0 0,10 -28,0" fill="#E0F2FE" opacity="0.8"/>
+          </g>
+        </svg>
+      `,
+
+      // Scene 5: Dark Lord's Throne Room
+      throneRoom: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="#05030A"/>
+
+          <!-- Gothic Pillars -->
+          <rect x="60" y="0" width="50" height="450" fill="#0F172A" stroke="#311042" stroke-width="4"/>
+          <rect x="590" y="0" width="50" height="450" fill="#0F172A" stroke="#311042" stroke-width="4"/>
+
+          <!-- Stained Glass Eclipse Window -->
+          <g transform="translate(350, 140)">
+            <circle cx="0" cy="0" r="100" fill="#1E1B4B" stroke="#581C87" stroke-width="6"/>
+            <circle cx="-15" cy="0" r="75" fill="#F59E0B" filter="url(#glowGold)"/>
+            <circle cx="10" cy="0" r="78" fill="#05030A"/>
+          </g>
+
+          <!-- Dark Obsidian Throne -->
+          <path d="M260 420 L280 200 L420 200 L440 420 Z" fill="#0F172A" stroke="#6B21A8" stroke-width="4"/>
+
+          <!-- Lord Nocturnus Seated on Throne -->
+          <use href="#darkLordNocturnus" x="350" y="240"/>
+
+          <!-- Kevin (Left) Facing Him -->
+          <use href="#kevinScared" x="160" y="280"/>
+        </svg>
+      `,
+
+      // Scene 6: Ending - Sun Dawn Hero
+      heroicEnding: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="#FEF3C7"/>
+
+          <!-- Radiant Dawn Sun -->
+          <circle cx="350" cy="180" r="130" fill="url(#sunGlowRadial)" filter="url(#glowGold)"/>
+
+          <!-- Green Blooming Hills -->
+          <path d="M0 340 Q200 240 400 330 T700 300 L700 450 L0 450 Z" fill="#15803D"/>
+          <path d="M0 370 Q300 280 700 350 L700 450 L0 450 Z" fill="#166534"/>
+
+          <!-- Kevin in Golden Armor Victorious -->
+          <g transform="translate(350, 240)" filter="url(#glowGold)">
+            <!-- Golden Cloak -->
+            <path d="M-30 30 Q-45 80 -35 110 L35 110 Q45 80 30 30 Z" fill="#D97706" />
+            <!-- Golden Armor -->
+            <path d="M-22 30 L22 30 L26 85 L-26 85 Z" fill="#FBBF24" stroke="#B45309" stroke-width="2" />
+            <rect x="-18" y="-5" width="36" height="32" rx="8" fill="#FBBF24" stroke="#B45309" stroke-width="2"/>
+            <!-- Confident Smile -->
+            <path d="M-8 12 Q0 20 8 12" stroke="#78350F" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Raised High Sun Sword -->
+            <path d="M25 10 L30 -60 L40 -60 L33 10 Z" fill="url(#bladeGold)"/>
+          </g>
+
+          <text x="350" y="420" text-anchor="middle" fill="#064E3B" font-family="Cinzel" font-size="22" font-weight="900" letter-spacing="2">HEROIC ENDING: SUNLIGHT RESTORED</text>
+        </svg>
+      `,
+
+      // Scene 7: Ending - Shadow Knight Alliance
+      shadowKnightEnding: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="#090514"/>
+
+          <!-- Celestial Eclipse (Sun & Moon Harmony) -->
+          <g transform="translate(350, 130)">
+            <circle cx="0" cy="0" r="85" fill="#F59E0B" filter="url(#glowGold)"/>
+            <circle cx="-18" cy="0" r="82" fill="#38BDF8" filter="url(#glowCyan)"/>
+            <circle cx="-5" cy="0" r="78" fill="#090514"/>
+          </g>
+
+          <!-- Cosmic Twilight Background -->
+          <path d="M0 450 L250 320 L450 320 L700 450 Z" fill="#1E1B4B"/>
+
+          <!-- Kevin as Eclipse Knight side-by-side with Nocturnus -->
+          <g transform="translate(260, 240)">
+            <!-- Sleek Eclipse Armor -->
+            <path d="M-22 30 L22 30 L26 85 L-26 85 Z" fill="#334155" stroke="#38BDF8" stroke-width="2" />
+            <rect x="-18" y="-5" width="36" height="32" rx="8" fill="#1E293B" stroke="#FBBF24" stroke-width="2"/>
+            <!-- Confident Cyan Eyes -->
+            <circle cx="-6" cy="8" r="2.5" fill="#38BDF8" filter="url(#glowCyan)"/>
+            <circle cx="6" cy="8" r="2.5" fill="#38BDF8" filter="url(#glowCyan)"/>
+            <!-- Dual Sun-Moon Sword -->
+            <path d="M25 10 L30 -50 L40 -50 L33 10 Z" fill="url(#bladeMoon)" filter="url(#glowCyan)"/>
+          </g>
+
+          <use href="#darkLordNocturnus" x="440" y="230"/>
+
+          <text x="350" y="420" text-anchor="middle" fill="#38BDF8" font-family="Cinzel" font-size="20" font-weight="900" letter-spacing="2">SHADOW KNIGHT ENDING: TWILIGHT HARMONY</text>
+        </svg>
+      `,
+
+      // Scene 8: Ending - Trapped in Dark
+      runAwayEnding: () => `
+        <svg viewBox="0 0 700 450" class="w-full h-full rounded-xl">
+          ${SVGDefs}
+          <rect width="700" height="450" fill="#020617"/>
+
+          <!-- Claustrophobic Darkness & Spooky Eyes -->
+          <ellipse cx="200" cy="150" rx="6" ry="3" fill="#EF4444" filter="url(#glowGold)"/>
+          <ellipse cx="215" cy="150" rx="6" ry="3" fill="#EF4444" filter="url(#glowGold)"/>
+          <ellipse cx="500" cy="180" rx="8" ry="4" fill="#A855F7" filter="url(#glowCyan)"/>
+          <ellipse cx="520" cy="180" rx="8" ry="4" fill="#A855F7" filter="url(#glowCyan)"/>
+
+          <!-- Tiny Light Circle for Kevin -->
+          <circle cx="350" cy="280" r="80" fill="url(#sunGlowRadial)" opacity="0.6"/>
+
+          <g transform="translate(350, 260)">
+            <use href="#kevinScared"/>
+          </g>
+
+          <text x="350" y="80" text-anchor="middle" fill="#F87171" font-family="Cinzel" font-size="20" font-weight="bold">COWARDLY ENDING: HIDDEN IN SHADOWS</text>
+          <text x="350" y="110" text-anchor="middle" fill="#94A3B8" font-size="13">Kevin retreated to his cellar with a nightlight, leaving the world in darkness.</text>
+        </svg>
+      `
+    };
+
+    /* =====================================================================
+       GAME NARRATIVE & STATE MANAGEMENT
+       ===================================================================== */
+    const storyNodes = {
+      start: {
+        chapter: "Chapter 1: The Curse of Eternal Night",
+        location: "Oakhaven Village",
+        fear: 30,
+        svg: 'village',
+        text: "A pitch-black curse of Eternal Darkness has engulfed Oakhaven. Young knight Kevin carries the radiant Sun Stone Sword—a legendary blade capable of burning through any shadow. But Kevin harbors a secret fear: he is terrified of the dark! Will you help him overcome his trembling heart to retrieve the Moon Crystal?",
+        choices: [
+          { text: "Brave the dark and enter Whispering Woods", nextNode: "forest" },
+          { text: "Flee in terror back to the cellar with a candle", nextNode: "hideEnding" }
+        ]
+      },
+
+      hideEnding: {
+        chapter: "Ending: Overwhelmed by Fear",
+        location: "Tavern Cellar",
+        fear: 100,
+        svg: 'runAwayEnding',
+        text: "The shadows whisper too loudly! Kevin sprints back to his basement, buries himself under three heavy quilts, and hugs his nightlight. The village remains in perpetual darkness, but Kevin feels safe... for now.",
+        choices: [
+          { text: "Try Again (Restart Quest)", nextNode: "start" }
+        ]
+      },
+
+      forest: {
+        chapter: "Chapter 2: The Whispering Woods",
+        location: "Whispering Woods",
+        fear: 60,
+        svg: 'forest',
+        text: "Eerie purple eyes glimmer behind gnarled oak trunks. Bioluminescent mushrooms cast spooky blue reflections. Kevin's knees knock uncontrollably, but the Sun Stone Sword flares softly, holding the dark at bay. Ahead stands a colossal stone gateway!",
+        choices: [
+          { text: "Approach the Ancient Shadow Gate", nextNode: "gatePuzzle" },
+          { text: "Panic! Run blindly through the trees", nextNode: "forestTrap" }
+        ]
+      },
+
+      forestTrap: {
+        chapter: "Chapter 2: Tangled in Darkness",
+        location: "Bramble Thimble",
+        fear: 85,
+        svg: 'forest',
+        text: "Sprinting blindly in the dark was a terrible idea! Kevin trips into thorny brambles. Though his glowing blade burns through the vines, his fear bar surges dramatically before he regains his footing.",
+        choices: [
+          { text: "Proceed carefully to the Shadow Gate", nextNode: "gatePuzzle" }
+        ]
+      },
+
+      gatePuzzle: {
+        chapter: "Chapter 3: The Sun-Dial Cipher",
+        location: "Ancient Shadow Gate",
+        fear: 45,
+        svg: 'shadowGate',
+        puzzleType: 'runeGate',
+        text: "The massive iron gate is locked by an ancient sun-dial mechanism. Inscribed above the arch is an ancient riddle: 'Align the celestial sequence from the morning sun to the twilight shadow to break the seal.'",
+        choices: []
+      },
+
+      moonTemple: {
+        chapter: "Chapter 4: Cavern of the Moon Crystal",
+        location: "Moon Temple Sanctuary",
+        fear: 30,
+        svg: 'moonTemple',
+        puzzleType: 'crystalAlign',
+        text: "The gate heavy doors swing open into a breathtaking crystal cavern! Floating above a stone altar, the Moon Crystal glows with soothing silver starlight. However, three optical pillars must be aligned to focus its lunar rays and release the Silver Key.",
+        choices: []
+      },
+
+      throneRoom: {
+        chapter: "Chapter 5: Nocturnus's Citadel",
+        location: "Dark Lord's Throne Room",
+        fear: 70,
+        svg: 'throneRoom',
+        text: "Kevin breaks into the obsidian castle and confronts Lord Nocturnus! But as Kevin raises his blazing sword, Nocturnus speaks calmly: 'Hold your blade, Knight! Your Sun Stone was scorching our realm and boiling our delicate rivers. The darkness was a shroud to protect my people from burning alive!'",
+        choices: [
+          { text: "Refuse to listen! Strike down Nocturnus with full sun power!", nextNode: "heroicEnding" },
+          { text: "Offer a truce: Combine Sun & Moon crystals for Twilight Harmony!", nextNode: "peaceChoice" },
+          { text: "Fear overtakes Kevin! Turn around and run home!", nextNode: "hideEnding" }
+        ]
+      },
+
+      heroicEnding: {
+        chapter: "Ending: Vanquisher of Night",
+        location: "Restored Oakhaven",
+        fear: 0,
+        svg: 'heroicEnding',
+        text: "Believing Nocturnus is deceiving him, Kevin channels the Sun Stone Sword's full glare! Nocturnus vanishes into dusk, and golden dawn floods Oakhaven. Kevin is hailed as a legendary hero, though the shadow lands are left parched...",
+        choices: [
+          { text: "Play Quest Again", nextNode: "start" }
+        ]
+      },
+
+      peaceChoice: {
+        chapter: "Ending: The Twilight Knight",
+        location: "Unified Realm",
+        fear: 0,
+        svg: 'shadowKnightEnding',
+        text: "Kevin realizes true courage isn't destroying the dark, but understanding it. Placing the Moon Crystal alongside the Sun Stone Sword creates a gentle twilight that heals both worlds! Kevin joins Nocturnus as the Shadow Knight—guardian of eclipse and harmony.",
+        choices: [
+          { text: "Play Quest Again", nextNode: "start" }
+        ]
+      }
+    };
+
+    let inventory = { scroll: false, key: false, crystal: false };
+
+    /* =====================================================================
+       INTERACTIVE PUZZLE LOGIC
+       ===================================================================== */
+    let currentRuneSeq = [];
+    const targetRuneSeq = ["Dawn", "Sol", "Dusk", "Eclipse"];
+
+    function renderRunePuzzle() {
+      const puzzleContainer = document.getElementById('puzzle-container');
+      puzzleContainer.classList.remove('hidden');
+      puzzleContainer.innerHTML = `
+        <div class="text-center">
+          <p class="text-xs text-amber-300 font-semibold mb-2">Select Runes in celestial order: Dawn &rarr; Sol &rarr; Dusk &rarr; Eclipse</p>
+          <div class="flex flex-wrap justify-center gap-2 mb-3">
+            ${['Sol', 'Dawn', 'Eclipse', 'Dusk'].sort(() => Math.random() - 0.5).map(rune => `
+              <button onclick="pressRune('${rune}')" class="px-3.5 py-2 bg-slate-800 hover:bg-amber-500/30 border border-amber-500/60 rounded-lg text-amber-200 text-xs font-serif font-bold transition shadow-md hover:scale-105">
+                ᚱ ${rune}
+              </button>
+            `).join('')}
+          </div>
+          <div class="text-xs text-slate-400">Sequence: <span id="rune-input" class="text-amber-400 font-mono font-bold">${currentRuneSeq.join(' &rarr; ')}</span></div>
+          <button onclick="resetRunePuzzle()" class="mt-2 text-[11px] text-slate-500 hover:text-slate-300 underline">Reset Order</button>
+        </div>
+      `;
+    }
+
+    function pressRune(rune) {
+      playSound('click');
+      currentRuneSeq.push(rune);
+      document.getElementById('rune-input').innerHTML = currentRuneSeq.join(' &rarr; ');
+
+      if (currentRuneSeq.length === targetRuneSeq.length) {
+        if (JSON.stringify(currentRuneSeq) === JSON.stringify(targetRuneSeq)) {
+          playSound('success');
+          inventory.scroll = true;
+          updateInventoryUI();
+          document.getElementById('puzzle-container').classList.add('hidden');
+          currentRuneSeq = [];
+          renderScene('moonTemple');
+        } else {
+          playSound('fail');
+          alert('The runes flare red and reset! Hint: Dawn -> Sol -> Dusk -> Eclipse');
+          resetRunePuzzle();
+        }
+      }
+    }
+
+    function resetRunePuzzle() {
+      currentRuneSeq = [];
+      const inputEl = document.getElementById('rune-input');
+      if (inputEl) inputEl.innerText = '';
+    }
+
+    // Moon Crystal Pillar Puzzle
+    let pillarAngles = [0, 0, 0];
+    function renderCrystalPuzzle() {
+      const puzzleContainer = document.getElementById('puzzle-container');
+      puzzleContainer.classList.remove('hidden');
+      puzzleContainer.innerHTML = `
+        <div class="text-center">
+          <p class="text-xs text-cyan-300 font-semibold mb-2">Rotate all 3 Crystal Pillars to 180° to focus moonlight!</p>
+          <div class="flex justify-center gap-4 mb-3">
+            ${[0, 1, 2].map(idx => `
+              <div class="flex flex-col items-center">
+                <span class="text-[10px] text-slate-400 mb-1">Pillar ${idx + 1}</span>
+                <button onclick="rotatePillar(${idx})" class="w-12 h-12 bg-slate-800 border border-cyan-400/60 rounded-full text-cyan-300 text-xs font-bold flex items-center justify-center glow-moon-lg hover:scale-110 transition">
+                  <span id="pillar-${idx}">${pillarAngles[idx]}°</span>
+                </button>
+              </div>
+            `).join('')}
+          </div>
+          <button onclick="checkCrystalPuzzle()" class="px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs rounded-lg shadow-lg transition">
+            Focus Lunar Energy
+          </button>
+        </div>
+      `;
+    }
+
+    function rotatePillar(index) {
+      playSound('click');
+      pillarAngles[index] = (pillarAngles[index] + 60) % 360;
+      document.getElementById(`pillar-${index}`).innerText = `${pillarAngles[index]}°`;
+    }
+
+    function checkCrystalPuzzle() {
+      if (pillarAngles.every(angle => angle === 180)) {
+        playSound('magic');
+        inventory.key = true;
+        inventory.crystal = true;
+        updateInventoryUI();
+        document.getElementById('puzzle-container').classList.add('hidden');
+        renderScene('throneRoom');
+      } else {
+        playSound('fail');
+        alert('The light beam misses the lock! Set all pillars to 180°.');
+      }
+    }
+
+    function updateInventoryUI() {
+      if (inventory.scroll) {
+        const scrollEl = document.getElementById('inv-scroll');
+        scrollEl.classList.remove('opacity-40', 'text-slate-500', 'bg-slate-900');
+        scrollEl.classList.add('bg-amber-950/50', 'border-amber-500/50', 'text-amber-300', 'glow-sun-lg');
+      }
+      if (inventory.key) {
+        const keyEl = document.getElementById('inv-key');
+        keyEl.classList.remove('opacity-40', 'text-slate-500', 'bg-slate-900');
+        keyEl.classList.add('bg-cyan-950/50', 'border-cyan-500/50', 'text-cyan-300', 'glow-moon-lg');
+      }
+      if (inventory.crystal) {
+        const crystalEl = document.getElementById('inv-crystal');
+        crystalEl.classList.remove('opacity-40', 'text-slate-500', 'bg-slate-900');
+        crystalEl.classList.add('bg-sky-950/50', 'border-sky-500/50', 'text-sky-300', 'glow-moon-lg');
+      }
+    }
+
+    function renderScene(nodeKey) {
+      const node = storyNodes[nodeKey];
+      if (!node) return;
+
+      // Update Fear Bar
+      const fearBar = document.getElementById('fear-bar');
+      fearBar.style.width = `${node.fear}%`;
+
+      // Update Header & Location badge
+      document.getElementById('chapter-title').innerText = node.chapter;
+      document.getElementById('location-text').innerText = node.location;
+
+      // Render Dynamic SVG Graphic
+      const viewport = document.getElementById('svg-viewport');
+      if (SVGFactory[node.svg]) {
+        viewport.innerHTML = SVGFactory[node.svg]();
+      }
+
+      // Smooth story text update
+      const storyTextEl = document.getElementById('story-text');
+      storyTextEl.style.opacity = '0';
+      setTimeout(() => {
+        storyTextEl.innerText = node.text;
+        storyTextEl.style.opacity = '1';
+      }, 150);
+
+      // Handle Choices & Puzzles
+      const choicesContainer = document.getElementById('choices-container');
+      const puzzleContainer = document.getElementById('puzzle-container');
+      choicesContainer.innerHTML = '';
+
+      if (node.puzzleType === 'runeGate') {
+        renderRunePuzzle();
+      } else if (node.puzzleType === 'crystalAlign') {
+        renderCrystalPuzzle();
+      } else {
+        puzzleContainer.classList.add('hidden');
+        node.choices.forEach(choice => {
+          const btn = document.createElement('button');
+          btn.className = "w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-amber-500/20 border border-slate-700 hover:border-amber-500/70 text-left text-slate-200 hover:text-amber-300 font-medium text-xs md:text-sm transition-all flex items-center justify-between group shadow-md hover:scale-[1.01]";
+          btn.innerHTML = `
+            <span>${choice.text}</span>
+            <svg class="w-4 h-4 text-slate-500 group-hover:text-amber-400 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          `;
+          btn.onclick = () => {
+            playSound('click');
+            if (choice.nextNode === 'start') {
+              inventory = { scroll: false, key: false, crystal: false };
+              document.querySelectorAll('.inventory-item').forEach((el, idx) => {
+                if (idx > 0) {
+                  el.className = "inventory-item opacity-40 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-500 font-medium transition-all";
+                }
+              });
+            }
+            renderScene(choice.nextNode);
+          };
+          choicesContainer.appendChild(btn);
+        });
+      }
+    }
+
+    // Initialize Game on Load
+    window.onload = function() {
+      renderScene('start');
+    };
+  </script><script type="text/javascript" src="script.js"></script>
+          
+        </body>
+      </html>
+    
